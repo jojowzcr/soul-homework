@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eef2f8">
+<meta name="robots" content="noindex,nofollow">
+<title>SOUL 作业速查站</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">S</div>
+      <div class="brand-text">
+        <h1>SOUL 作业速查站</h1>
+        <p>班长整理 · 手机版</p>
+      </div>
+    </div>
+    <button class="icon-btn" id="btnAbout" aria-label="使用须知">i</button>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="hero" aria-label="最近截止"></section>
+
+    <section class="card cal-card" aria-label="作业日历">
+      <div class="cal-head">
+        <button class="icon-btn" id="prevMonth" aria-label="上个月">‹</button>
+        <div class="cal-title">
+          <h2 id="monthLabel">2026 年 11 月</h2>
+          <button class="link-btn" id="todayBtn">回到今天</button>
+        </div>
+        <button class="icon-btn" id="nextMonth" aria-label="下个月">›</button>
+      </div>
+      <div class="weekdays" aria-hidden="true">
+        <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="legend" id="legend"></div>
+    </section>
+
+    <div class="filters" id="filters" aria-label="筛选"></div>
+    <div class="content-legend" id="contentLegend"></div>
+
+    <section class="list" id="list" aria-label="全部作业"></section>
+
+    <footer class="foot">
+      非官方页面 · 不含姓名 / 学号 / 成绩 · 仅供思路参考,请按课程要求独立完成
+    </footer>
+  </main>
+
+  <nav class="bottom-nav" aria-label="底部导航">
+    <button class="nav-btn active" data-goto="calendar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+      <span>日历</span>
+    </button>
+    <button class="nav-btn" data-goto="list">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+      <span>清单</span>
+    </button>
+    <button class="nav-btn" data-goto="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <span>搜索</span>
+    </button>
+    <button class="nav-btn" data-goto="about">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+      <span>说明</span>
+    </button>
+  </nav>
+</div>
+
+<div class="backdrop" id="backdrop"></div>
+
+<section class="sheet" id="daySheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheet-handle"></div>
+  <div class="sheet-head">
+    <h3 id="sheetTitle"></h3>
+    <button class="icon-btn" id="sheetClose" aria-label="关闭">✕</button>
+  </div>
+  <div class="sheet-body" id="sheetBody"></div>
+</section>
+
+<div class="modal" id="detail" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+  <div class="modal-head">
+    <button class="icon-btn" id="detailClose" aria-label="关闭">✕</button>
+    <div class="modal-head-main">
+      <div class="detail-course" id="detailCourse"></div>
+      <h2 id="detailTitle"></h2>
+      <div class="detail-meta" id="detailMeta"></div>
+    </div>
+    <button class="icon-btn" id="detailCopy" aria-label="复制链接" title="复制链接">⧉</button>
+  </div>
+  <div class="ai-banner" id="detailAi"></div>
+  <div class="tabs" id="detailTabs" role="tablist">
+    <button class="tab active" data-tab="req" role="tab">要求</button>
+    <button class="tab" data-tab="approach" role="tab">拆解</button>
+    <button class="tab" data-tab="pitfalls" role="tab">坑</button>
+    <button class="tab" data-tab="checklist" role="tab">清单</button>
+    <button class="tab" data-tab="captain" role="tab">班长做法</button>
+  </div>
+  <div class="modal-body" id="detailBody"></div>
+</div>
+
+<div class="modal" id="about" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+  <div class="modal-head">
+    <button class="icon-btn" id="aboutClose" aria-label="关闭">✕</button>
+    <div class="modal-head-main">
+      <div class="detail-course">使用须知</div>
+      <h2 id="aboutTitle">这个站怎么用</h2>
+    </div>
+    <span class="icon-btn ghost"></span>
+  </div>
+  <div class="modal-body about-body">
+    <h3>给同学的速查工具</h3>
+    <p>按日期看作业,点开看「要求 / 拆解 / 坑 / 清单」。目标是帮你快速有思路,不是给你一份可交的答案。</p>
+
+    <h3>隐私</h3>
+    <p>站内不含姓名、学号、Turnitin 回执、相似度、成绩、老师评语,也不含任何账号或登录态。课程只显示代码与标题。</p>
+
+    <h3>学术诚信</h3>
+    <p>请按课程要求独立完成。不要直接复制站内文字、结构或例子去交;因直接套用造成的抄袭/查重问题,由使用者自己承担。</p>
+
+    <h3>班长做法</h3>
+    <p>每份作业的「班长做法」是当时实际走的步骤(或根据草稿还原),只讲流程,不提供可交的正文。没有过程稿的作业会明确写「待补」。</p>
+
+    <h3>内容可信度</h3>
+    <p><span class="src-chip src-brief">已核对 brief</span> 看过原始作业说明;<span class="src-chip src-notes">笔记整理</span> 根据课程笔记/提纲;<span class="src-chip src-platform">平台页</span> 来自 SOUL 作业页;<span class="src-chip src-artifact">成品</span> 根据成品/README;<span class="src-chip src-inferred">未核对</span> 只有标题,解析已隐藏。</p>
+
+    <h3>AI 政策</h3>
+    <p>部分课程明确「AI 生成按抄袭处理」。站内只提供思路与检查清单,不提供 AI 生成的正文,也不代表课程官方口径。</p>
+
+    <h3>分享给同学</h3>
+    <p>扫码打开本站:</p>
+    <img class="qr" src="qr.png" alt="SOUL 作业速查站二维码">
+    <p class="qr-url">https://applemacbook-air.tail9873f5.ts.net:8443/</p>
+
+    <h3>非官方</h3>
+    <p>本页由同学整理,与 HKU SPACE 及 SOUL 平台无关。截止时间以 SOUL 作业页为准;带「约」的是按剩余时间估算。</p>
+  </div>
+</div>
+
+<div class="search-overlay" id="search">
+  <div class="search-head">
+    <input id="searchInput" type="search" placeholder="搜课程代码 / 作业标题" autocomplete="off">
+    <button class="link-btn" id="searchClose">取消</button>
+  </div>
+  <div class="search-body" id="searchBody"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
