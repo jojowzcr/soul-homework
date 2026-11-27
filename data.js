@@ -359,7 +359,7 @@ window.ASSIGNMENTS = [
   {
     "id": "fina6335-assignment-2",
     "course": "FINA6335",
-    "short": "NEW",
+    "short": "A2",
     "title": "Assignment 2",
     "due": "2026-12-12T23:38:00+08:00",
     "status": "todo",
@@ -376,7 +376,7 @@ window.ASSIGNMENTS = [
   {
     "id": "geng5002-group-presentation-powerpoint-submission",
     "course": "GENG5002",
-    "short": "NEW",
+    "short": "PPT",
     "title": "Group Presentation PowerPoint (Submission)",
     "due": "2026-12-16T23:59:00+08:00",
     "status": "todo",
@@ -489,7 +489,7 @@ window.ASSIGNMENTS = [
   {
     "id": "geng5002-individual-reflection-report-submission",
     "course": "GENG5002",
-    "short": "NEW",
+    "short": "REF",
     "title": "Individual Reflection Report (Submission)",
     "due": "2027-01-03T23:59:00+08:00",
     "status": "todo",

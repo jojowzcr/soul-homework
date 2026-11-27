@@ -7,7 +7,8 @@
     SWAS6021: { name: "Intelligent Technologies for ESG", color: "#10b981" },
     GENG5002: { name: "Intercultural Communication", color: "#8b5cf6" },
     PLES6015: { name: "FinTech: Law & Regulations", color: "#06b6d4" },
-    FINA6333: { name: "AI and Financial Computing", color: "#ef4444" }
+    FINA6333: { name: "AI and Financial Computing", color: "#ef4444" },
+    FINA6335: { name: "RegTech Applications in Finance", color: "#e11d48" }
   };
   var GUIDE = {
     HTMG6097: {
@@ -101,7 +102,17 @@
   };
 
   var state = { month: new Date(), filter: "all", q: "", detailId: null, tab: "req" };
-  state.month = new Date(state.month.getFullYear(), state.month.getMonth(), 1);
+  (function () {
+    var now = new Date();
+    var todo = DATA.filter(function (a) { return a.status !== "submitted"; }).sort(sortDue);
+    var next = todo.filter(function (a) { return dueDate(a) >= now; })[0];
+    if (next) {
+      var d = dueDate(next);
+      state.month = new Date(d.getFullYear(), d.getMonth(), 1);
+    } else {
+      state.month = new Date(now.getFullYear(), now.getMonth(), 1);
+    }
+  })();
 
   function $(sel, root) { return (root || document).querySelector(sel); }
   function $all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
