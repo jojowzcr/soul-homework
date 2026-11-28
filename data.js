@@ -187,15 +187,15 @@ window.ASSIGNMENTS = [
   },
   {
     "id": "ples6015-rtar-a1",
-    "course": "PLES6015",
+    "course": "FINA6335",
     "short": "RTAF",
     "title": "RTAF Assignment 1",
-    "due": "2026-11-28T00:00:00+08:00",
+    "due": "2026-12-05T23:59:00+08:00",
     "status": "submitted",
     "type": "可运行网页(老师课堂代码复现)",
     "weight": "RTAF Assignment 1",
     "source": "artifact",
-    "sourceNote": "来源:老师课堂代码 + 复现记录 + RTAF-README(公开口径)",
+    "sourceNote": "来源:SOUL FINA6335 Assignment 1 + 老师课堂代码 + 复现记录 + RTAF-README(公开口径)",
     "requirements": [
       "任务:把老师课堂上的均线策略代码,复现成一个能当场演示的网页",
       "交付物:可本地运行的分析网页、启动脚本、说明文档",
@@ -361,17 +361,42 @@ window.ASSIGNMENTS = [
     "course": "FINA6335",
     "short": "A2",
     "title": "Assignment 2",
-    "due": "2026-12-12T23:38:00+08:00",
+    "due": "2026-12-12T23:59:00+08:00",
     "status": "todo",
-    "estimated": true,
-    "type": "作业说明待补",
-    "weight": "",
-    "source": "platform",
-    "sourceNote": "来自 SOUL 作业页;未核对 brief",
-    "requirements": [],
-    "approach": [],
-    "pitfalls": [],
-    "checklist": []
+    "estimated": false,
+    "type": "Individual assignment · 1,500 words",
+    "weight": "100 marks",
+    "source": "brief",
+    "sourceNote": "来源:Assignment 2_RTAF_2455(20261128).pdf(已读全文)",
+    "requirements": [
+      "1,500 words(excluding references/appendices);APA style;100%",
+      "Case: Nova Digital Group — (a) cryptoasset trading platform, (b) HKD stablecoin NovaHKD, (c) tokenized commercial real estate loans",
+      "Q1(30): crypto asset types + DLT + investor/financial stability risks (15); HK VATP regulation under SFO/AMLO, investor protection, custody, AML/CFT incl. FATF travel rule (15)",
+      "Q2(35): compare fiat-referenced / crypto-collateralized / algorithmic stablecoins + a real failure (e.g., TerraUSD) (15); Stablecoins Ordinance (Cap. 656) + HKMA guidelines: licensing, reserves, redemption at par, capital, risk management, AML/CFT (20)",
+      "Q3(35): tokenization of RWAs — benefits vs limitations/risks (15); whether tokenized loan interests are securities/CIS; investor suitability, offering restrictions, custody, disclosure, cross-border (20)",
+      "Assessment: accuracy/depth; regulatory analysis; business implications/recommendations; RegTech tools/evidence; clarity/referencing/academic integrity"
+    ],
+    "approach": [
+      "先按 Nova 的三条 initiative 拆题;每一问先写定义/框架,再套香港法规,最后落到「对 Nova 的业务含义 + 建议」",
+      "Q1 用「资产类型 → DLT 机制 → 投资者/金融稳定风险 → 香港 VATP 监管」四段;AML/CFT 记得 travel rule",
+      "Q2 用对比表:稳定机制/储备/风险;TerraUSD 只作失败案例,不要占太多篇幅;NovaHKD 按 Cap. 656 逐项对照",
+      "Q3 先讲 tokenization 的收益/局限,再判断是否 securities/CIS;用「suitability / offering restrictions / custody / disclosure / cross-border」五段",
+      "每条法规引最新版(SFO/AMLO/Cap. 656/HKMA 指引),并说明对 Nova 的实操影响"
+    ],
+    "pitfalls": [
+      "只讲概念,不套香港法规/案例",
+      "把稳定币当成存款或货币市场基金,忽略 Cap. 656 的储备/赎回要求",
+      "tokenized loan interests 直接下结论「是/不是证券」,没有分析",
+      "字数超限或引用格式不统一;漏 business implications"
+    ],
+    "checklist": [
+      "1,500 words(不含 references/appendices)",
+      "Q1/Q2/Q3 分值对应",
+      "每条法规有出处(最新版)",
+      "TerraUSD 案例有事实/来源",
+      "Nova 三条 initiative 都有建议",
+      "APA references; academic integrity"
+    ]
   },
   {
     "id": "geng5002-group-presentation-powerpoint-submission",
